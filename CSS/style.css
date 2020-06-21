@@ -1,0 +1,313 @@
+@import url(https://fonts.googleapis.com/css?family=Signika);
+
+header {
+  height: 20px;
+}
+
+body {
+  background: beige;
+}
+
+nav {
+  font-family: "Signika", sans-serif;
+}
+
+.mbox_title {
+  margin: 0;
+  padding: 0.5em;
+  text-align: center;
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Signika", sans-serif;
+}
+
+.title {
+  display: flex;
+  margin: 0 auto;
+  width: 600px;
+  height: auto;
+}
+
+.title_ex {
+  font-family: "Signika", sans-serif;
+}
+
+.maintitle {
+  font-size: 5em;
+  font: bold 7.5vw/1.6 "Signika", sans-serif;
+}
+
+.logo {
+  margin-top: 20px;
+}
+
+.forms {
+  display: flex;
+  justify-content: space-evenly;
+}
+.mem_box {
+  background-color: cornflowerblue;
+  width: 300px;
+  height: 200px;
+  border-radius: 2em;
+}
+
+.guest_box {
+  background-color: rgb(116, 227, 188);
+  width: 300px;
+  height: 200px;
+  border-radius: 2em;
+}
+
+/*guest box design*/
+.gbox_title {
+  font-size: 31px;
+  font-family: "Signika", sans-serif;
+  text-decoration: none;
+  color: white;
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.gbox_title:hover {
+  color: rgba(18, 247, 205, 0.85);
+  font-size: 33px;
+  border-bottom: 1px solid #008964;
+  box-shadow: rgba(146, 237, 200, 0.85) 0 0px 0px 40px inset;
+  transform: translate(-0.1%, 0);
+  width: 100%;
+  transition: width 0.8s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.gbox_title:visited {
+  color: rgb(0, 110, 245);
+}
+
+/*select.php*/
+.getkern_ex {
+  margin-left: 30px;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.humdrum {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+table {
+  margin: 0 20px;
+}
+
+/*get_kern.php*/
+.getkerndata {
+  margin-left: 30px;
+}
+
+.gtcreat {
+  display: flex;
+  font-size: 13px;
+  margin-left: 30px;
+  font-family: "Signika", sans-serif;
+}
+
+.gtc2 {
+  color: royalblue;
+}
+
+.textbox {
+  position: relative;
+  margin-left: 30px;
+  display: block;
+  width: 200px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #636262;
+  outline: none;
+}
+
+.login_btn {
+  border-radius: 0.5em;
+  margin-left: 30px;
+  padding: 3px;
+  cursor: pointer;
+  background: white;
+}
+
+.gbox_title {
+  text-align: center;
+  margin: 0 aut;
+}
+
+/**kern.php**/
+.h_kern {
+  display: flex;
+}
+
+.logo_title {
+  font-family: "Signika", sans-serif;
+  margin-top: 0;
+}
+
+.kern_r_form {
+  margin-top: 40px;
+}
+
+.kern_nav_list {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  height: 20px;
+  justify-content: space-between;
+}
+
+/*for select.php*/
+.getkern_ex {
+  margin-top: 50px;
+}
+
+table,
+th,
+td {
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  line-height: 1.5;
+}
+
+table th {
+  text-align: center;
+  color: white;
+  background: linear-gradient(#ffb7fd, #df6d8c);
+  border-left: 1px solid #ff82e6;
+  border-top: 1px solid #ff82e6;
+  border-bottom: 2px solid #efd8f4;
+  box-shadow: 0px 1px 1px rgba(222, 80, 153, 0.653) inset;
+  padding: 5px 0;
+}
+
+table td {
+  width: 350px;
+  padding: 10px;
+  vertical-align: top;
+}
+
+tr:nth-child(even) {
+  background: #d9d9d9;
+}
+
+.select_list {
+  padding: 0;
+}
+
+/*get_kern.php*/
+.getkerndata {
+  margin-top: 50px;
+}
+
+/*to user*/
+.to_user {
+  color: rgb(45, 111, 232);
+}
+
+/*user_index.php*/
+.wrapper_userindex {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.leftbox {
+  background-color: white;
+  width: 150px;
+  height: 200px;
+}
+
+.middlebox {
+  background-color: white;
+  width: 400px;
+  height: 300px;
+}
+
+.rightbox {
+  background-color: white;
+  width: 150px;
+  height: 200px;
+}
+
+.pic {
+  width: 80px;
+  height: 80px;
+  background-color: rgb(162, 180, 198);
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.p_name,
+.act {
+  text-align: center;
+  color: rgb(78, 134, 239);
+  font-family: "Signika", sans-serif;
+}
+
+/*passcheck*/
+
+.c_a_form {
+  width: 535px;
+  background: #ffffff;
+  padding: 20px;
+  margin: 90px auto;
+  border-radius: 5px;
+  height: 300px;
+  border: 2px solid gray;
+}
+
+.blue_form input {
+  padding: 5px 14px;
+  border: 1px solid #d5d9da;
+  box-shadow: 0 0 9px #0e34f5 inset;
+  margin-bottom: 8px;
+  width: 272px;
+  font-size: 1em;
+  height: 25px;
+  border-radius: 10px;
+}
+
+.short {
+  font-weight: bold;
+  color: #ff000085;
+}
+.weak {
+  font-weight: bold;
+  color: rgba(255, 166, 0, 0.516);
+}
+
+.good {
+  font-weight: bold;
+  color: #2d97f380;
+}
+.strong {
+  font-weight: bold;
+  color: rgba(50, 205, 50, 0.578);
+}
+
+#pass_ad {
+  font-size: 10px;
+  color: rgb(96, 88, 88);
+}
+
+.c_a_ex {
+  margin-top: 0;
+  font-family: "Signika", sans-serif;
+}
+
+#create_btn {
+  display: none;
+}
+
+/*search_act.php*/
+.searched {
+  margin-top: 60px;
+}

@@ -1,0 +1,36 @@
+<全員が見えるページ>
+get_kern.php Kernデータコピー用ページ
+login_error.php ログインエラーのアナウンスページ
+login.php ログイン用トップページ
+select.php 全kernデータ閲覧ページ
+
+
+<会員のみ見えるページ>
+delete_success.php 削除コンプリートアナウンス画面
+get_kern_log.php 会員用のKernデータコピー用ページ
+kern_registered.php kernデータ登録後のアナウンス画面
+Kern.php kernデータの登録画面
+select_log.php 会員用の全kernデータ閲覧ページ
+select_u.php 登録したデータの一覧と削除ページ
+update_kern.php 選択したデータの編集と削除ページ
+user_index.php　ユーザーのトップページ
+
+
+
+<機能>
+delete.php　削除機能
+Funcs.php セッションIDのregenerateなどの関数
+kern_insert.php kernデータ登録機能
+Login_act.php ログイン機能
+Logout.php ログアウト機能
+update_act.php アップデート機能
+
+=====================================
+User menu
+全リスト閲覧
+登録
+編集・削除
+トップへ
+ログアウト
+
+
