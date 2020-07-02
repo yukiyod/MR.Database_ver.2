@@ -1,8 +1,13 @@
-<全員が見えるページ>
+<全員に見えるページ>
 get_kern.php Kernデータコピー用ページ
 login_error.php ログインエラーのアナウンスページ
 login.php ログイン用トップページ
 select.php 全kernデータ閲覧ページ
+
+
+<アカウント作成>
+acc_registered.php アカウント作成完了アナウンス画面
+create_acc.php アカウント作成画面
 
 
 <会員のみ見えるページ>
@@ -14,6 +19,8 @@ select_log.php 会員用の全kernデータ閲覧ページ
 select_u.php 登録したデータの一覧と削除ページ
 update_kern.php 選択したデータの編集と削除ページ
 user_index.php　ユーザーのトップページ
+delete_acc.php アカウント削除ページ
+
 
 
 

@@ -220,35 +220,49 @@ tr:nth-child(even) {
 }
 
 .leftbox {
-  background-color: white;
+  background-color: royalblue;
   width: 150px;
   height: 200px;
+  border-radius: 20px;
 }
 
 .middlebox {
-  background-color: white;
-  width: 400px;
-  height: 300px;
+  background-color: rgb(242, 161, 75);
+  width: 250px;
+  height: 500px;
+  border-radius: 20px;
+  padding: 10px;
+  font-family: "Signika", sans-serif;
 }
 
 .rightbox {
   background-color: white;
-  width: 150px;
+  width: 400px;
   height: 200px;
+  border-radius: 20px;
 }
 
 .pic {
   width: 80px;
   height: 80px;
   background-color: rgb(162, 180, 198);
-  margin: 0 auto;
+  margin: 10px auto;
   border-radius: 50%;
+  background-image: url(../img/IMG_0154.JPG);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .p_name,
 .act {
   text-align: center;
-  color: rgb(78, 134, 239);
+  color: white;
+  font-family: "Signika", sans-serif;
+}
+
+.delete_acc {
+  margin-top: 30px;
+  color: #888888;
   font-family: "Signika", sans-serif;
 }
 
@@ -307,7 +321,192 @@ tr:nth-child(even) {
   display: none;
 }
 
+/*search.php*/
+.searchmethod {
+  margin-top: 20px;
+}
+
 /*search_act.php*/
 .searched {
   margin-top: 60px;
+}
+
+.genre_s_select {
+  display: none;
+  position: relative;
+  overflow: hidden;
+  height: 30px;
+  width: 150px;
+  background: #ffffff;
+  border: 1px solid;
+  border-color: rgb(186, 182, 182);
+  border-radius: 5px;
+  background-image: -webkit-linear-;
+  margin-left: 50px;
+  margin-right: 20px;
+}
+.genre_s_select:before,
+.genre_s_select:after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 9px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 4px dashed;
+  border-color: #888888 transparent;
+  pointer-events: none;
+}
+
+.genre_s_select:before {
+  border-bottom-style: solid;
+  border-top: none;
+}
+
+.genre_s_select:after {
+  margin-top: 7px;
+  border-top-style: solid;
+  border-bottom: none;
+}
+
+.s_by_genre {
+  position: relative;
+  width: 130%;
+  margin: 0;
+  padding: 6px 8px 6px 8px;
+  height: 28px;
+  line-height: 13px;
+  font-size: 12px;
+  color: #62717a;
+  text-shadow: 0 1px white;
+  background: #f2f2f2; /* Fallback for IE 8 */
+  background: rgba(
+    0,
+    0,
+    0,
+    0
+  ) !important; /* "transparent" doesn't work with Opera */
+  border: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+.s_by_genre:focus {
+  width: 100%;
+  color: #394349;
+  outline: 3px solid rgb(65, 225, 169);
+}
+
+.genre_s_select {
+  border: 1px solid;
+  border-color: rgb(186, 182, 182);
+  border-radius: 5px;
+  background-image: -webkit-linear-;
+  margin-left: 50px;
+  margin-right: 20px;
+}
+
+.s_by_stitle {
+  display: none;
+  height: 30px;
+  width: 350px;
+  border: 1px solid;
+  border-color: rgb(186, 182, 182);
+  border-radius: 5px;
+  background-image: -webkit-linear-;
+  margin-left: 50px;
+  margin-right: 20px;
+  font-family: FontAwesome;
+}
+
+.s_by_otitle {
+  display: none;
+  height: 30px;
+  width: 350px;
+  border: 1px solid;
+  border-color: rgb(186, 182, 182);
+  border-radius: 5px;
+  background-image: -webkit-linear-;
+  margin-left: 50px;
+  margin-right: 20px;
+  font-family: FontAwesome;
+}
+.s_by_composer {
+  display: none;
+  height: 30px;
+  width: 350px;
+  border: 1px solid;
+  border-color: rgb(186, 182, 182);
+  border-radius: 5px;
+  background-image: -webkit-linear-;
+  margin-left: 50px;
+  margin-right: 20px;
+  font-family: FontAwesome;
+}
+.s_by_btn {
+  display: none;
+  background-color: rgb(65, 225, 188);
+  border-radius: 10px;
+}
+
+.kern_s_form {
+  margin-top: 30px;
+  display: flex;
+}
+
+/*delete_acc.php*/
+.del_acc_ex h3 {
+  color: royalblue;
+}
+
+.del_acc_ex {
+  font-family: "hiragino kaku gothic pro", "ms pgothic", sans-serif;
+  color: #6a6d6f;
+}
+
+.del_acc_title {
+  width: 600px;
+  height: 50px;
+  display: flex;
+  margin-top: 50px;
+  margin-left: 20px;
+}
+.logo_cry {
+  width: 80px;
+  height: 80px;
+  background: url("../img/cry.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  animation: r1 1s linear;
+}
+@keyframes r1 {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.agree_btn {
+  display: flex;
+  margin-top: 20px;
+}
+
+.con_pass {
+  margin-left: 40px;
+  margin-right: 10px;
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #8a8d8f;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #636262;
+}
+
+#delete_acc_btn {
+  background-color: #feb343;
+  color: #524e4e;
 }

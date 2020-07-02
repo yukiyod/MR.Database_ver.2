@@ -5,9 +5,9 @@ $lpw = $_POST["lpw"];
 
 //1. 接続します
 try {
-  $pdo = new PDO('mysql:dbname=MR_database;charset=utf8;host=localhost','root','root');
+  $pdo = new PDO('mysql:dbname=MR_database;charset=utf8;host=localhost', 'root', 'root');
 } catch (PDOException $e) {
-  exit('DBConnectError:'.$e->getMessage());
+  exit('DBConnectError:' . $e->getMessage());
 }
 
 //２．データ取得SQL作成
@@ -18,9 +18,9 @@ $stmt->bindValue(':lmail', $lmail);
 $res = $stmt->execute(); //エラー対策
 
 //SQL実行時にエラーがある場合
-if($res==false){
+if ($res == false) {
   $error = $stmt->errorInfo();
-  exit("QueryError:".$error[2]);
+  exit("QueryError:" . $error[2]);
 }
 
 //３．抽出データ数を取得
@@ -28,15 +28,15 @@ if($res==false){
 $val = $stmt->fetch(); //1レコードだけ取得する方法
 
 //４. 該当レコードがあればSESSIONに値を代入
-if( $val["id"] != "" ){  //idが空でない場合
+if ($val["id"] != "") {  //idが空でない場合
   $_SESSION["chk_ssid"]  = session_id(); //ブラウザごとにsessionスタートしたらユニークきーを渡す
   $_SESSION["u_name"]   = $val['u_name']; //ページを跨いで"hogeさんようこそ"と名前を表示させるためにsessionで入れている
+  $_SESSION["u_id"]   = $val['id'];
   //Login処理OKの場合kern.phpへ遷移
   header("Location: user_index.php");
-}else{
+} else {
   //Login処理NGの場合login.phpへ遷移
   header("Location: login_error.php");
 }
 //処理終了
 exit();
-?>

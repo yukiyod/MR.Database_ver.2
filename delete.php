@@ -10,7 +10,7 @@ try {
   }
   
 
-//3.UPDATE gs_an_table SET ....; で更新(bindValue)
+//3.delete処理
 $sql = 'DELETE FROM mrdb_kern_table WHERE id=:id';
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);    //更新したいidを渡す
@@ -28,7 +28,3 @@ if($status==false){
   exit;
 
 }
-
-
-
-?>
