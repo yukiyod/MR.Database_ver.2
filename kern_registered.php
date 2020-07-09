@@ -7,6 +7,7 @@ include("funcs.php"); //今は同じ階層なのでこの書き方でOK
 loginCheck();
 
 $u_name = $_SESSION['u_name'];
+$u_id = $_SESSION["u_id"];
 
 //1.  DB接続します
 try {
@@ -17,7 +18,7 @@ try {
 }
 
 //２．データ取得SQL作成 (login中のユーザーが登録したdataのみ表示)
-$stmt = $pdo->prepare("SELECT COUNT(*) FROM mrdb_kern_table WHERE contributor = '$u_name'");
+$stmt = $pdo->prepare("SELECT COUNT(*) FROM mrdb_kern_table WHERE u_id = '$u_id'");
 $status = $stmt->execute();
 
 

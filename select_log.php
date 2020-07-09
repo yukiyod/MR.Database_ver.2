@@ -56,12 +56,7 @@ if ($status == false) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>data list</title>
   <link rel="stylesheet" href="CSS/style.css" />
-  <style>
-    div {
-      padding: 10px;
-      font-size: 16px;
-    }
-  </style>
+
 </head>
 
 <body id="main">
@@ -83,7 +78,11 @@ if ($status == false) {
 
   <!-- Main[Start] -->
   <h3 class="to_user">Hello! <?= $u_name ?></h3>
-  <p class="getkern_ex">Click the Title to get the Kern data!</p>
+  <div class="select_ex">
+    <p class="getkern_ex">Click the Title to get the Kern data!</p>
+    <div class="logo2">
+    </div>
+  </div>
   <div>
     <table>
       <tr>

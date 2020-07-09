@@ -105,7 +105,7 @@ if ($status == false) {
     $view .= "<td>" . $result["genre"] . "</td>";
     $view .= "<td>" . $result["s_title"] . "</td>" . "<td>" . $result["composer"] . "</td>";
     $view .= "<td>";
-    $view .= '<a href = "update_kern.php?id=' . $result["id"] . '">'; //idを埋め込んで出してくれる
+    $view .= '<a href = "get_kern.php?id=' . $result["id"] . '">'; //idを埋め込んで出してくれる
     $view .= $result["o_title"] . "</td>";
     $view .= '</a>';
     $view .= "</tr>";
@@ -122,14 +122,9 @@ if ($status == false) {
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>edit kern</title>
+  <title>searced kern</title>
   <link rel="stylesheet" href="CSS/style.css" />
-  <style>
-    div {
-      padding: 10px;
-      font-size: 16px;
-    }
-  </style>
+
 </head>
 
 <body id="main">
@@ -147,7 +142,13 @@ if ($status == false) {
   <!-- Head[End] -->
 
   <!-- Main[Start] -->
+
   <div>
+    <div class="search_ex">
+      <p class="getkern_ex">Click the Title to get the Kern data!</p>
+      <div class="logo2">
+      </div>
+    </div>
     <table class="searched">
       <tr>
         <th>Genre</th>

@@ -22,11 +22,36 @@ $stmt = $pdo->prepare("SELECT COUNT(*) FROM mrdb_kern_table WHERE u_id = '$u_id'
 $date = $pdo->prepare("SELECT DATE_FORMAT(indate,'%Y/%m/%d') FROM mrdb_kern_table WHERE u_id = '$u_id'");
 
 $status = $stmt->execute();
-
-
-
 $count = $stmt->fetchColumn();
 
+//3．ユーザープロフィールデータ取得SQL作成 (login中のユーザーが登録したdataのみ表示)
+$stmt2 = $pdo->query("SELECT * FROM mrdb_profile_table WHERE u_id = '$u_id'");
+$status2 = $stmt2->execute();
+foreach ($stmt2 as $row) {
+  // データベースのフィールド名で出力
+  // echo $row['city'];
+}
+
+$city = $row['city'];
+$country = $row['country'];
+$inst = $row['inst'];
+$dept = $row['dept'];
+$comment = $row['comment'];
+$keywords = $row['keywords'];
+$facebook = $row['facebook'];
+$twitter = $row['twitter'];
+
+$array = explode(",", $keywords);
+// $span = "";
+// if ($array !== null) {
+//   foreach ($array as $value);
+//   $span .= "<span>";
+//   $span .= $array;
+//   $span .= "</span>";
+// }
+
+
+// $city = $stmt2["city"];
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +62,7 @@ $count = $stmt->fetchColumn();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>user_top</title>
   <link rel="stylesheet" href="CSS/style.css" />
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 </head>
@@ -57,20 +83,46 @@ $count = $stmt->fetchColumn();
       </ul>
     </nav>
   </header>
-  <h3>Hello! <?= $u_name ?></h3>
+  <h3 class="to_user">Hello! <?= $u_name ?></h3>
   <div class="wrapper_userindex">
     <div class="leftbox">
-      <div class="pic"></div>
-      <div class="p_name"><?= $u_name ?>♩</div>
-      <div class="act">Contributed data：<?= $count ?></div>
+      <div class="leftbox1">
+        <div class="pic"></div>
+        <div class="p_name"><?= $u_name ?>♩</div>
+        <div class="act">Contributed data：<?= $count ?></div>
+      </div>
+      <div class="leftbox2">
+        <a href="<?= $facebook ?>" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square fa-2x my_fb"></i></a>
+        <a href="<?= $twitter ?>" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter fa-2x my_tw"></i></a>
+
+      </div>
     </div>
-    <div class="middlebox">Profile</div>
+
+    <div class="middlebox">
+      <div class="place">
+        <i class="fas fa-map-marker-alt"></i>
+        <?= $city ?>, <?= $country ?>
+      </div>
+      <div class="inst">
+        Institute： <?= $inst ?><br>
+        Department： <?= $dept ?>
+      </div><br><br>
+      <div class="comment"><?= $comment ?></div>
+      <div class="tags">
+        <?php foreach ($array as $str) : ?>
+          <span class="span_tag">#<?php echo $str; ?></span>
+        <?php endforeach; ?>
+      </div>
+    </div>
     <div class="rightbox">
       <canvas id="charts"></canvas>
     </div>
   </div>
 
-  <footer>
+  <footer class="f_u_index">
+    <div class="update_acc">
+      <a href="profile_update.php"> Update my profile</a>
+    </div>
     <div class="delete_acc">
       <a href="delete_acc.php"> Delete my Account</a>
     </div>

@@ -37,11 +37,7 @@ if($status==false){
 
 }else{
   //select.phpへリダイレクト
-  header("Location: select_log.php");
+  header("Location: select_u.php");
   exit;
 
 }
-
-
-
-?>

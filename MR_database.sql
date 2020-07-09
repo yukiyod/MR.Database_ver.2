@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: localhost:8889
--- 生成日時: 2020 年 7 月 02 日 20:59
+-- 生成日時: 2020 年 7 月 09 日 23:41
 -- サーバのバージョン： 5.7.26
 -- PHP のバージョン: 7.4.2
 
@@ -52,14 +52,20 @@ INSERT INTO `mrdb_kern_table` (`id`, `genre`, `s_title`, `o_title`, `composer`, 
 (24, 'EthnicMusic', 'arab', 'arabarab', 'abra', 'aaaaa', '松本隼人', 3, '2020-07-01 01:43:53'),
 (25, 'Classical', 'deltest', 'delete', 'deldel', 'what if?', 'ヨデンユキコ', 65, '2020-07-01 18:46:54'),
 (26, 'Classical', 'test', 'hash', 'test', 'hash_del', 'テスト太郎', 88, '2020-07-01 20:56:26'),
-(27, 'FilmScore', 'chart', 'forchart', 'test', 'asdf', 'YukikoYoden', 1, '2020-06-29 03:35:20'),
-(28, 'FilmScore', 'MGMM', '1111', '11111', '111111111', 'YukikoYoden', 1, '2020-07-02 17:16:34'),
+(27, 'FilmScore', 'chart', 'forchart', 'test', 'asdf_updated', 'YukikoYoden', 1, '2020-06-29 03:35:20'),
+(28, 'FilmScore', 'MGMM', '1111', '11111', '22222', 'YukikoYoden', 1, '2020-07-02 17:16:34'),
 (29, 'FilmScore', 'test', 'test', 'ttttt', 'ttttttt', 'YukikoYoden', 1, '2020-07-02 17:21:03'),
 (30, 'Classical', 'test', 'test', 'xqqqq', 'qqqqq', 'YukikoYoden', 1, '2020-07-02 17:24:45'),
 (31, 'EthnicMusic', 'abc ', 'abc', 'abc abc', 'abcabc', '松本隼人', 3, '2020-07-02 18:06:51'),
 (32, 'EthnicMusic', 'my les co', 'edittest', 'Yukiko Yoden', 'asdfasdf', 'テスト太郎', 88, '2020-07-02 18:07:37'),
 (33, 'FilmScore', 'my les co', 'edittest', 'YODEN YUKIKO', 'asdfasdfasdf', 'テスト太郎', 88, '2020-07-02 18:07:56'),
-(34, 'FilmScore', 'my les co', 'edittest', 'yukikoyoden', 'asdasdfasdafs', 'テスト太郎', 88, '2020-07-02 18:08:12');
+(34, 'FilmScore', 'my les co', 'edittest', 'yukikoyoden', 'asdasdfasdafs', 'テスト太郎', 88, '2020-07-02 18:08:12'),
+(35, 'Classical', 'test', '１', '１', '１', 'テスト太郎', 88, '2020-07-04 15:17:39'),
+(36, 'FilmScore', 'q', 'test', 'q', 'q', 'テスト太郎', 88, '2020-07-04 15:37:12'),
+(37, 'Classical', '1', '1111', '1', '11', 'テスト太郎', 88, '2020-07-04 15:38:00'),
+(38, 'Classical', 'test', 'test', 'Bach a　b', 'yyy', 'テスト太郎', 97, '2020-07-07 01:00:56'),
+(39, 'Classical', 'test', 'test', 'Bach a　b', 'uuu', 'テスト太郎', 98, '2020-07-07 01:10:57'),
+(40, 'Classical', 'test', 'test', 'aseem', 'asdf', 'テスト太郎', 99, '2020-07-07 01:14:27');
 
 -- --------------------------------------------------------
 
@@ -82,11 +88,36 @@ CREATE TABLE `mrdb_old_user_table` (
 --
 
 INSERT INTO `mrdb_old_user_table` (`id`, `old_id`, `old_u_name`, `old_u_mail`, `old_u_pw`, `old_indate`, `indate`) VALUES
-(1, 88, 'テスト太郎', 'hash@hash', '$2y$10$qocJABnzhcDlp/m/fyjA9Oqf4YdBjp8ngL0zA29C9163cSukGSBfO', '2020-06-20 17:27:29', '2020-07-01 22:08:08'),
-(2, 88, 'テスト太郎', 'hash@hash', '$2y$10$qocJABnzhcDlp/m/fyjA9Oqf4YdBjp8ngL0zA29C9163cSukGSBfO', '2020-06-20 17:27:29', '2020-07-01 22:10:17'),
-(3, 88, 'テスト太郎', 'hash@hash', '$2y$10$qocJABnzhcDlp/m/fyjA9Oqf4YdBjp8ngL0zA29C9163cSukGSBfO', '2020-06-20 17:27:29', '2020-07-01 22:11:27'),
-(4, 88, 'テスト太郎', 'hash@hash', '$2y$10$qocJABnzhcDlp/m/fyjA9Oqf4YdBjp8ngL0zA29C9163cSukGSBfO', '2020-06-20 17:27:29', '2020-07-01 22:12:42'),
-(5, 88, 'テスト太郎', 'hash@hash', '$2y$10$qocJABnzhcDlp/m/fyjA9Oqf4YdBjp8ngL0zA29C9163cSukGSBfO', '2020-06-20 17:27:29', '2020-07-02 18:11:03');
+(13, 99, 'テスト太郎', 'hash@hash', '$2y$10$Drydsi0yO6iTJYkybqyc3eGUbd10PO/ulj744gXdd7EottMfLjhs6', '2020-07-07 01:13:45', '2020-07-07 01:18:24');
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `mrdb_profile_table`
+--
+
+CREATE TABLE `mrdb_profile_table` (
+  `id` int(11) NOT NULL,
+  `city` varchar(128) DEFAULT NULL,
+  `country` varchar(128) DEFAULT NULL,
+  `inst` varchar(128) DEFAULT NULL,
+  `dept` varchar(128) DEFAULT NULL,
+  `comment` varchar(2000) DEFAULT NULL,
+  `keywords` varchar(10000) DEFAULT NULL,
+  `facebook` varchar(256) DEFAULT NULL,
+  `twitter` varchar(256) DEFAULT NULL,
+  `u_id` int(11) NOT NULL,
+  `indate` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータのダンプ `mrdb_profile_table`
+--
+
+INSERT INTO `mrdb_profile_table` (`id`, `city`, `country`, `inst`, `dept`, `comment`, `keywords`, `facebook`, `twitter`, `u_id`, `indate`) VALUES
+(1, 'Suginami-ku', 'Japan', 'Tokyo University of the Arts', 'music', 'Hi there! I like MR.database!', 'J.S.Bach,filmmusic,photoplay', 'https://www.facebook.com/yukiko.yoden/', 'twi', 101, '2020-07-09 19:27:03'),
+(2, 'Suginami-ku', 'Japan', 'Stanford', 'music', 'testinf', 'J.S.Bach,kern', 'ff', 'tt', 102, '2020-07-09 23:00:25'),
+(3, 'Suginami-ku', '', 'Tokyo University of the Arts', 'music', 'Hi there! I like MR.database! I\'m updating!', 'J.S.Bach,filmmusic,photoplay', 'https://www.facebook.com/yukiko.yoden/', 'twi', 101, '2020-07-09 23:40:57');
 
 -- --------------------------------------------------------
 
@@ -131,7 +162,8 @@ INSERT INTO `mrdb_user_table` (`id`, `u_name`, `u_mail`, `u_pw`, `life_flg`, `in
 (83, 'qwera', 'asf1234@1234', '123476uio', 0, '2020-06-20 14:48:04'),
 (86, 'ヨデンユキコ', 'yuil@drj', '1234asghjk', 0, '2020-06-20 15:32:53'),
 (87, 'ヨデンユキコ', 'qweryuio@qwertoi', '$2y$10$GCBiipD/X6lcySy/Dek9O.xdlMMXotTQkeY6RUNreYKvlP2hOJwf.', 0, '2020-06-20 17:26:26'),
-(88, 'テスト太郎', 'hash@hash', '$2y$10$qocJABnzhcDlp/m/fyjA9Oqf4YdBjp8ngL0zA29C9163cSukGSBfO', 0, '2020-06-20 17:27:29');
+(101, 'setpro太郎', 'set@set', '$2y$10$fSOPvrmc7IW4MIVrn1jqpe9HmIgxypynhJgAz.HHVgf9ckV.YrRve', 0, '2020-07-09 19:24:06'),
+(102, 'test hanako', 'hana@hana', '$2y$10$k5YvPuDKnLpuykIucVR5FuejtZFw9hDxemzqtO25udZzd00216wh6', 0, '2020-07-09 22:47:44');
 
 --
 -- ダンプしたテーブルのインデックス
@@ -151,6 +183,13 @@ ALTER TABLE `mrdb_old_user_table`
   ADD PRIMARY KEY (`id`);
 
 --
+-- テーブルのインデックス `mrdb_profile_table`
+--
+ALTER TABLE `mrdb_profile_table`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `u_id` (`u_id`);
+
+--
 -- テーブルのインデックス `mrdb_user_table`
 --
 ALTER TABLE `mrdb_user_table`
@@ -167,19 +206,25 @@ ALTER TABLE `mrdb_user_table`
 -- テーブルのAUTO_INCREMENT `mrdb_kern_table`
 --
 ALTER TABLE `mrdb_kern_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- テーブルのAUTO_INCREMENT `mrdb_old_user_table`
 --
 ALTER TABLE `mrdb_old_user_table`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- テーブルのAUTO_INCREMENT `mrdb_profile_table`
+--
+ALTER TABLE `mrdb_profile_table`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- テーブルのAUTO_INCREMENT `mrdb_user_table`
 --
 ALTER TABLE `mrdb_user_table`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- ダンプしたテーブルの制約
@@ -190,6 +235,12 @@ ALTER TABLE `mrdb_user_table`
 --
 ALTER TABLE `mrdb_kern_table`
   ADD CONSTRAINT `mrdb_kern_table_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `mrdb_user_table` (`id`);
+
+--
+-- テーブルの制約 `mrdb_profile_table`
+--
+ALTER TABLE `mrdb_profile_table`
+  ADD CONSTRAINT `mrdb_profile_table_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `mrdb_user_table` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

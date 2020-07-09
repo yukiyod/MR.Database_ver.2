@@ -52,6 +52,7 @@ loginCheck();
             <li>Your contributed Kern Data will remain in MR.database. If you want to delete your contributed data, please go to <a href="select_u.php">Edit/Delete</a> and delete data that you would not like to leave.</li>
         </ul>
     </div>
+    <!-- <form method="post" action="delete_acc_act.php" name="delete_acc_form" id="delete_acc_form"> -->
     <form method="post" action="delete_acc_act.php" name="delete_acc_form" id="delete_acc_form">
         <div class="agree_btn">
             <input class="con_pass" type="text" name="u_pw" placeholder="Passward">

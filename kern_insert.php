@@ -9,7 +9,7 @@ session_start();
 include("funcs.php"); //今は同じ階層なのでこの書き方でOK
 loginCheck();
 
-//入力チェック(受信確認処理追加)
+//入力チェック(null可なのでチェックなし)
 if (
   !isset($_POST["genre"]) || $_POST["genre"] == "" ||  //genreがpostされてなくて、値が空っぽなら
   !isset($_POST["s_title"]) || $_POST["s_title"] == "" ||

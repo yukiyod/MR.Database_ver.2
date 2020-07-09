@@ -6,6 +6,8 @@ header {
 
 body {
   background: beige;
+  margin: 0;
+  padding: 0;
 }
 
 nav {
@@ -24,7 +26,7 @@ nav {
 
 .title {
   display: flex;
-  margin: 0 auto;
+  margin: 15px auto;
   width: 600px;
   height: auto;
 }
@@ -72,10 +74,11 @@ nav {
 }
 
 .gbox_title:hover {
-  color: rgba(18, 247, 205, 0.85);
+  color: white;
   font-size: 33px;
-  border-bottom: 1px solid #008964;
-  box-shadow: rgba(146, 237, 200, 0.85) 0 0px 0px 40px inset;
+  border-top: 1px solid #cef7ec;
+  border-bottom: 1px solid #cef7ec;
+  box-shadow: rgba(150, 235, 205, 0.646) 0 0px 0px 40px inset;
   transform: translate(-0.1%, 0);
   width: 100%;
   transition: width 0.8s ease-in-out, transform 0.3s ease-in-out;
@@ -85,11 +88,42 @@ nav {
   color: rgb(0, 110, 245);
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.f_login {
+  width: 100%;
+  color: black;
+  text-align: center;
+  padding: 20px 0;
+  position: absolute; /*←絶対位置*/
+  bottom: 0; /*下に固定*/
+  font-family: "Signika", sans-serif;
+}
+
 /*select.php*/
 .getkern_ex {
-  margin-left: 30px;
   font-size: 20px;
-  margin-bottom: 30px;
+}
+.select_ex {
+  display: flex;
+  justify-content: center;
+}
+
+.logo2 {
+  width: 50px;
+  height: 50px;
+  background: url("../img/mr_db.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  margin-top: 50px;
+  animation: r1 1s linear;
 }
 
 .humdrum {
@@ -150,7 +184,8 @@ table {
 
 .logo_title {
   font-family: "Signika", sans-serif;
-  margin-top: 0;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .kern_r_form {
@@ -158,6 +193,7 @@ table {
 }
 
 .kern_nav_list {
+  padding-top: 10px;
   list-style: none;
   display: flex;
   width: 100%;
@@ -167,7 +203,10 @@ table {
 
 /*for select.php*/
 .getkern_ex {
-  margin-top: 50px;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: "Signika", sans-serif;
 }
 
 table,
@@ -175,23 +214,26 @@ th,
 td {
   border-collapse: collapse;
   border: 1px solid #ccc;
-  line-height: 1.5;
+  line-height: 1;
+  margin: 0 auto;
 }
 
 table th {
   text-align: center;
+  /* font-family: "Signika", sans-serif; */
   color: white;
-  background: linear-gradient(#ffb7fd, #df6d8c);
-  border-left: 1px solid #ff82e6;
-  border-top: 1px solid #ff82e6;
-  border-bottom: 2px solid #efd8f4;
-  box-shadow: 0px 1px 1px rgba(222, 80, 153, 0.653) inset;
-  padding: 5px 0;
+  background: royalblue;
+  border-right: 1px solid white;
+  border-top: 1px solid rgba(65, 105, 225, 0.626);
+  border-bottom: 1px solid rgba(65, 105, 225, 0.626);
+  box-shadow: 0px 1px 1px rgba(75, 156, 255, 0.818) inset;
+  padding: 7px 5px;
 }
 
 table td {
-  width: 350px;
+  width: auto;
   padding: 10px;
+  font-family: "Signika", sans-serif;
   vertical-align: top;
 }
 
@@ -208,9 +250,15 @@ tr:nth-child(even) {
   margin-top: 50px;
 }
 
+#DLlink {
+  color: black;
+  text-decoration: none;
+}
+
 /*to user*/
 .to_user {
   color: rgb(45, 111, 232);
+  margin-left: 10px;
 }
 
 /*user_index.php*/
@@ -219,17 +267,26 @@ tr:nth-child(even) {
   justify-content: space-evenly;
 }
 
-.leftbox {
+.leftbox1 {
   background-color: royalblue;
   width: 150px;
   height: 200px;
   border-radius: 20px;
+  padding-top: 10px;
+}
+
+.leftbox2 {
+  margin-top: 20px;
+  width: 150px;
+  height: 200px;
+  text-align: center;
 }
 
 .middlebox {
   background-color: rgb(242, 161, 75);
-  width: 250px;
-  height: 500px;
+  /* color: white; */
+  width: 300px;
+  height: auto;
   border-radius: 20px;
   padding: 10px;
   font-family: "Signika", sans-serif;
@@ -237,8 +294,8 @@ tr:nth-child(even) {
 
 .rightbox {
   background-color: white;
-  width: 400px;
-  height: 200px;
+  width: 300px;
+  height: 150px;
   border-radius: 20px;
 }
 
@@ -260,10 +317,39 @@ tr:nth-child(even) {
   font-family: "Signika", sans-serif;
 }
 
+.tags {
+  margin-top: 20px;
+}
+
+.span_tag {
+  background-color: yellow;
+  padding: 0.3em;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+
 .delete_acc {
-  margin-top: 30px;
   color: #888888;
   font-family: "Signika", sans-serif;
+  margin-left: 20px;
+}
+
+.f_u_index {
+  font-family: "Signika", sans-serif;
+  display: flex;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+/*create_acc.php*/
+.logo3 {
+  width: 50px;
+  height: 50px;
+  background: url("../img/mr_db.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  animation: r1 1s linear;
 }
 
 /*passcheck*/
@@ -315,6 +401,7 @@ tr:nth-child(even) {
 .c_a_ex {
   margin-top: 0;
   font-family: "Signika", sans-serif;
+  display: flex;
 }
 
 #create_btn {
@@ -323,12 +410,19 @@ tr:nth-child(even) {
 
 /*search.php*/
 .searchmethod {
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.search_ex {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
 /*search_act.php*/
 .searched {
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 .genre_s_select {
@@ -455,6 +549,12 @@ tr:nth-child(even) {
   display: flex;
 }
 
+/*acc_registered.php*/
+#first_login {
+  font-family: "Signika", sans-serif;
+  margin-left: 20px;
+}
+
 /*delete_acc.php*/
 .del_acc_ex h3 {
   color: royalblue;
@@ -509,4 +609,87 @@ tr:nth-child(even) {
 #delete_acc_btn {
   background-color: #feb343;
   color: #524e4e;
+}
+
+/*profile_input.php*/
+.profile_input_form {
+  font-family: "Signika", sans-serif;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+.residence {
+  display: flex;
+  margin-bottom: 10px;
+}
+.inst_label,
+.dep_label,
+.facebook,
+.twitter {
+  margin-bottom: 10px;
+}
+.tag_label {
+  margin-top: 10px;
+}
+
+.tags-input {
+  border: 1px solid rgb(142, 139, 139);
+  border-radius: 2px;
+  display: inline-block;
+  width: 555px;
+  height: 150px;
+  background-color: white;
+}
+
+.tags-input .tag {
+  font-size: 85%;
+  padding: 0.3em 0.5em;
+  margin: 0.25em 0.1em;
+  display: inline-block;
+  background-color: rgb(221, 221, 221);
+  transition: all 0.1s linear;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.tags-input .tag:hover {
+  background-color: royalblue;
+  color: white;
+}
+
+.tags-input .tag .close::after {
+  content: "×";
+  font-weight: bold;
+  display: inline-block;
+  transform: scale(1.4);
+  margin-left: 0.75em;
+}
+
+.tags-input .tag .close:hover::after {
+  color: red;
+}
+
+.tags-input .main-input {
+  border: 0;
+  outline: 0;
+  padding: 0.5em 0.1em;
+}
+
+.my_fb {
+  color: royalblue;
+}
+
+.my_tw {
+  color: skyblue;
+}
+
+.profile_img {
+  margin-bottom: 20px;
+  display: flex;
+}
+
+#myimage {
+  margin-top: 15px;
+  margin-left: 15px;
 }

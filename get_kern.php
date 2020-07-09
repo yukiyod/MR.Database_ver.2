@@ -6,11 +6,11 @@ $id = $_GET["id"]; //urlにくっついてきてるのでgetで受け取る
 
 //2.DB接続など
 try {
-    //Password:MAMP='root',XAMPP=''
-    $pdo = new PDO('mysql:dbname=MR_database;charset=utf8;host=localhost','root','root');
-  } catch (PDOException $e) {
-    exit('DBConnectError:'.$e->getMessage());
-  }
+  //Password:MAMP='root',XAMPP=''
+  $pdo = new PDO('mysql:dbname=MR_database;charset=utf8;host=localhost', 'root', 'root');
+} catch (PDOException $e) {
+  exit('DBConnectError:' . $e->getMessage());
+}
 
 
 //3.SELECT * FROM gs_an_table WHERE id=:id;
@@ -20,12 +20,11 @@ $status = $stmt->execute();
 
 
 //4.データ表示
-$view="";
-if($status==false) {
+$view = "";
+if ($status == false) {
   //execute（SQL実行時にエラーがある場合）
   $error = $stmt->errorInfo();
-  exit("ErrorQuery:".$error[2]);
-
+  exit("ErrorQuery:" . $error[2]);
 } else {
   //１データのみ抽出の場合はwhileループで取り出さない
   //idで取る場合は、絶対１つ
@@ -39,61 +38,73 @@ if($status==false) {
 
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Get Kern data</title>
   <link rel="stylesheet" href="CSS/style.css" />
 </head>
+
 <body>
 
-<!-- Head[Start] -->
-<header class="h_kern">
+  <!-- Head[Start] -->
+  <header class="h_kern">
     <h1 class="logo_title">MR.Database</h1>
-  <nav class="kern_nav">
+    <nav class="kern_nav">
       <ul class="kern_nav_list">
-          <li><a href="select.php">Use database</a></li>
-          <li><a href="login.php">Back to Top</a></li>
+        <li><a href="select.php">Use database</a></li>
+        <li><a href="login.php">Back to Top</a></li>
       </ul>
-  </nav>
-</header>
-<!-- Head[End] -->
+    </nav>
+  </header>
+  <!-- Head[End] -->
 
-<!-- Main[Start] -->
-  <div class="getkerndata">  
-    <div class="getkern_ex">Copy the Kern data</div>
-     <div>Title：<?=$row["o_title"]?></div>
-     <div>Composer：<?=$row["composer"]?></div>
-     <div><textArea name="kern" id="kern" rows="10" cols="40"><?=$row["kern"]?></textArea></div>
-     <input type="hidden" name="id" value="<?=$row["id"]?>">
-     <button onclick="copyToClipboard()">Copy</button>
+  <!-- Main[Start] -->
+  <div class="getkerndata">
+    <div class="getkern_ex">Copy or Download the Kern data</div>
+    <div>Title：<?= $row["o_title"] ?></div>
+    <div>Composer：<?= $row["composer"] ?></div>
+    <div><textArea name="kern" id="kern" rows="10" cols="40"><?= $row["kern"] ?></textArea><br>
+    </div>
+    <div class="kern btns">
+      <button><a href="" id="DLlink" download="<?= $row["o_title"] ?>.kern">Download</a></button>
+
+      <button onclick="copyToClipboard()">Copy</button>
+    </div>
+    <input type="hidden" name="id" value="<?= $row["id"] ?>">
     </fieldset>
   </div>
 
 
-<div class="humdrum">
-    <a href="https://verovio.humdrum.org/" target="_blank" rel="noopener noreferrer" >Go to Verovio Humdrum Viewer</a>
-</div>
-<!-- Main[End] -->
+  <div class="humdrum">
+    <a href="https://verovio.humdrum.org/" target="_blank" rel="noopener noreferrer">Go to Verovio Humdrum Viewer</a>
+  </div>
+  <!-- Main[End] -->
 
-<script>
-        function copyToClipboard() {
-            // コピー対象をJavaScript上で変数として定義する
-            var copyTarget = document.getElementById("kern");
+  <script>
+    function copyToClipboard() {
+      // コピー対象をJavaScript上で変数として定義する
+      var copyTarget = document.getElementById("kern");
 
-            // コピー対象のテキストを選択する
-            copyTarget.select();
+      // コピー対象のテキストを選択する
+      copyTarget.select();
 
-            // 選択しているテキストをクリップボードにコピーする
-            document.execCommand("Copy");
+      // 選択しているテキストをクリップボードにコピーする
+      document.execCommand("Copy");
 
-            // コピーをお知らせする
-            alert("Copied to Clipboard" );
-        }
-    </script>
+      // コピーをお知らせする
+      alert("Copied to Clipboard");
+    }
+
+    //.kern形式でタイトルをファイル名にしたテキストデータをダウンロード
+    document.querySelector('#DLlink').onclick = function() {
+      var text = document.querySelector('#kern').value;
+      this.href = 'data:text/plain;charset=utf-8,' +
+        encodeURIComponent(text);
+    };
+  </script>
 </body>
+
 </html>
-
-
-

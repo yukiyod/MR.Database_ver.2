@@ -131,10 +131,7 @@ if ($status == false) {
     <title>edit kern</title>
     <link rel="stylesheet" href="CSS/style.css" />
     <style>
-        div {
-            padding: 10px;
-            font-size: 16px;
-        }
+
     </style>
 </head>
 
@@ -157,6 +154,11 @@ if ($status == false) {
 
     <!-- Main[Start] -->
     <div>
+        <div class="search_ex">
+            <p class="getkern_ex">Click the Title to get the Kern data!</p>
+            <div class="logo2">
+            </div>
+        </div>
         <table class="searched">
             <tr>
                 <th>Genre</th>

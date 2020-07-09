@@ -73,7 +73,10 @@
 
   <form method="post" action="member_insert.php" class="c_a_form">
     <div class="blue_form">
-      <h3 class="c_a_ex">Create your MR.Database Account</h3>
+      <h3 class="c_a_ex">Create your MR.Database Account
+        <div class="logo3">
+        </div>
+      </h3>
       <input type="text" placeholder="Name" name="u_name" required><br>
       <input type="email" placeholder="Email" name="u_mail" required><br>
       <input type="password" placeholder="password" name="u_pw" id="pass" required><br>

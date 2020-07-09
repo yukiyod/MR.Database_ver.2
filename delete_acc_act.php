@@ -53,8 +53,10 @@ VALUES(NULL,:a1,:a2,:a3,:a4,:a5,sysdate())");
 
         //delete処理
         $stmt3 = $pdo->query('SET foreign_key_checks = 0');
+        $stmt3->execute();
         $stmt3 = $pdo->prepare("DELETE FROM mrdb_user_table WHERE id= :id");
         $stmt3->bindValue(':id', $u_id, PDO::PARAM_INT);
+        $stmt3->execute();
         $stmt3 = $pdo->query('SET foreign_key_checks = 1');
         $status3 = $stmt3->execute();
     } else {
